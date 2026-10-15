@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Voice of Store — AI-Powered Retail Feedback Intelligence. A full-stack AI application for analyzing employee feedback and helping managers resolve recurring retail problems.">
+  <meta name="theme-color" content="#0b1730">
+  <title>Voice of Store | AI-Powered Retail Feedback Intelligence</title>
+
+  <style>
+    :root {
+      --navy: #0b1730;
+      --blue: #2563eb;
+      --teal: #0d9488;
+      --background: #f4f7fb;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0b1730, #123b60);
+      color: white;
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      color: #cbdff3;
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.05rem;
+    }
+
+    .brand {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 6px 14px;
+      border: 1px solid #477ba3;
+      border-radius: 30px;
+      color: #8ce8de;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: min(1050px, 92%);
+      margin: 32px auto 60px;
+    }
+
+    nav {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    nav h2 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    nav ul {
+      padding-left: 22px;
+      columns: 2;
+    }
+
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: clamp(20px, 4vw, 36px);
+      margin-bottom: 24px;
+      box-shadow: 0 4px 18px rgb(15 23 42 / 4%);
+      scroll-margin-top: 20px;
+    }
+
+    section h2 {
+      font-size: 1.55rem;
+      color: var(--navy);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #dce9f5;
+    }
+
+    section h3 {
+      font-size: 1.1rem;
+      margin: 22px 0 10px;
+      color: #164e63;
+    }
+
+    p {
+      margin-bottom: 14px;
+    }
+
+    ul, ol {
+      padding-left: 25px;
+      margin: 10px 0 18px;
+    }
+
+    li {
+      padding-left: 4px;
+      margin-bottom: 7px;
+    }
+
+    .highlight {
+      background: #effcf9;
+      border-left: 4px solid var(--teal);
+      padding: 18px;
+      border-radius: 6px;
+      margin: 18px 0;
+    }
+
+    .tech-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .tech-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #f8fafc;
+    }
+
+    .tech-card strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    code {
+      background: #eef2ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.94em;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 16px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 18px;
+      }
+
+      nav ul {
+        columns: 1;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      header {
+        background: var(--navy);
+        print-color-adjust: exact;
+      }
+
+      section, nav {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      nav a {
+        color: var(--text);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <span class="brand">AI-Powered Enterprise Solution</span>
+    <h1>Voice of Store</h1>
+    <p>AI-Powered Retail Feedback Intelligence</p>
+    <p style="margin-top: 16px;">
+      Transform employee feedback into actionable insights, identify
+      recurring retail problems, and help managers make data-driven decisions.
+    </p>
+  </header>
+
+  <main class="container">
+
+    <nav aria-label="Project sections">
+      <h2>Project Contents</h2>
+      <ul>
+        <li><a href="#objective">Project Objective</a></li>
+        <li><a href="#technology">Technology Stack</a></li>
+        <li><a href="#features">Core Features</a></li>
+        <li><a href="#design">UI/UX Requirements</a></li>
+        <li><a href="#development">Development Requirements</a></li>
+        <li><a href="#execution">Execution Instructions</a></li>
+      </ul>
+    </nav>
+
+    <section id="objective">
+      <h2>1. Project Objective</h2>
+
+      <p>
+        Develop an intelligent application that collects retail employee
+        feedback, analyzes it using AI, identifies recurring problems,
+        and helps managers take corrective action.
+      </p>
+
+      <div class="highlight">
+        <strong>Core mission:</strong>
+        Convert unstructured employee feedback into meaningful insights
+        and track the corrective actions taken to resolve workplace issues.
+      </div>
+    </section>
+
+    <section id="technology">
+      <h2>2. Technology Stack</h2>
+
+      <div class="tech-list">
+        <div class="tech-card">
+          <strong>Frontend</strong>
+          React, TypeScript, Vite, Tailwind CSS, and Recharts.
+        </div>
+
+        <div class="tech-card">
+          <strong>Backend</strong>
+          Python, FastAPI, and REST APIs.
+        </div>
+
+        <div class="tech-card">
+          <strong>AI/ML</strong>
+          Python NLP, sentiment analysis, text classification,
+          keyword extraction, urgency detection, and similarity-based clustering.
+        </div>
+
+        <div class="tech-card">
+          <strong>Database</strong>
+          SQLite with persistent storage.
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>3. Core Features</h2>
+
+      <h3>3.1 Interactive Dashboard</h3>
+      <ul>
+        <li>Display real-time feedback statistics.</li>
+        <li>Visualize sentiment analysis and issue categories.</li>
+        <li>Highlight urgent concerns and recurring problems.</li>
+        <li>Display corrective-action status using interactive charts.</li>
+      </ul>
+
+      <h3>3.2 Feedback Submission</h3>
+      <ul>
+        <li>Allow employees to submit feedback.</li>
+        <li>Capture store, department, category, and urgency details.</li>
+        <li>Include optional voice-to-text functionality.</li>
+      </ul>
+
+      <h3>3.3 AI Analysis</h3>
+      <p>Analyze every feedback submission and provide:</p>
+      <ul>
+        <li>Sentiment classification.</li>
+        <li>Predicted feedback category.</li>
+        <li>Important keywords.</li>
+        <li>Urgency recommendations.</li>
+        <li>A concise explanation of the analysis.</li>
+        <li>Suggested solutions and corrective measures.</li>
+      </ul>
+
+      <h3>3.4 Feedback Explorer</h3>
+      <ul>
+        <li>Search feedback records.</li>
+        <li>Filter and sort feedback by relevant fields.</li>
+        <li>View feedback alongside its AI analysis.</li>
+      </ul>
+
+      <h3>3.5 Recurring Issue Detection</h3>
+      <ul>
+        <li>Group similar feedback submissions.</li>
+        <li>Identify repeated workplace problems.</li>
+        <li>Detect issues such as stock shortages, billing failures,
+            staffing shortages, and customer complaints.</li>
+      </ul>
+
+      <h3>3.6 Manager Action Center</h3>
+      <ul>
+        <li>Create corrective actions.</li>
+        <li>Assign actions to responsible personnel.</li>
+        <li>Set priorities and deadlines.</li>
+        <li>Update action statuses.</li>
+        <li>Add notes and track resolution history.</li>
+        <li>Resolve actions and monitor outstanding issues.</li>
+      </ul>
+
+      <h3>3.7 Reports and Export</h3>
+      <ul>
+        <li>Generate reports from stored feedback data.</li>
+        <li>Export filtered, actual database records to CSV.</li>
+      </ul>
+
+      <h3>3.8 AI Transparency</h3>
+      <ul>
+        <li>Explain how the AI analysis works.</li>
+        <li>Document AI limitations.</li>
+        <li>Identify whether an analysis uses a machine-learning model
+            or a rule-based fallback.</li>
+      </ul>
+
+      <h3>3.9 User Roles and Permissions</h3>
+      <ul>
+        <li>Provide separate employee and manager access.</li>
+        <li>Enforce role-based permissions on the backend.</li>
+        <li>Protect manager-only operations from unauthorized access.</li>
+      </ul>
+
+      <h3>3.10 Demo Data</h3>
+      <ul>
+        <li>Include realistic fictional feedback records.</li>
+        <li>Allow judges to explore the application immediately.</li>
+      </ul>
+    </section>
+
+    <section id="design">
+      <h2>4. UI/UX Requirements</h2>
+
+      <p>
+        Create a premium, modern enterprise SaaS interface with a
+        sophisticated navy, white, and teal/blue color palette.
+      </p>
+
+      <ul>
+        <li>Professional typography.</li>
+        <li>A clean, intuitive sidebar.</li>
+        <li>Elegant dashboard cards.</li>
+        <li>Interactive charts.</li>
+        <li>Consistent spacing and visual hierarchy.</li>
+        <li>Subtle animations and polished transitions.</li>
+        <li>Responsive desktop and mobile layouts.</li>
+        <li>Working navigation and primary controls.</li>
+        <li>Loading indicators and validation messages.</li>
+        <li>Graceful error handling and useful empty states.</li>
+      </ul>
+    </section>
+
+    <section id="development">
+      <h2>5. Development Requirements</h2>
+
+      <ol>
+        <li>
+          Build the actual application in the current workspace,
+          not just a frontend mockup.
+        </li>
+        <li>
+          Organize the code into maintainable frontend, backend,
+          database, and AI modules.
+        </li>
+        <li>
+          Connect every page to working API endpoints.
+        </li>
+        <li>
+          Persist feedback, AI analysis, recurring themes,
+          and corrective actions in SQLite.
+        </li>
+        <li>
+          Implement genuine NLP processing using an appropriate
+          local model when feasible.
+        </li>
+        <li>
+          If a model or external service is unavailable, provide
+          a transparent, functional local fallback.
+        </li>
+        <li>
+          Do not require paid APIs for core features.
+        </li>
+        <li>
+          Include automated backend tests.
+        </li>
+        <li>
+          Include a <code>.env.example</code> file if needed.
+        </li>
+        <li>
+          Provide a clear README with installation instructions,
+          startup commands, demo login details, and troubleshooting guidance.
+        </li>
+        <li>
+          Validate user input and handle errors gracefully.
+        </li>
+        <li>
+          Protect manager-only operations on the backend.
+        </li>
+        <li>
+          Avoid exposing sensitive employee information.
+        </li>
+      </ol>
+
+      <div class="highlight">
+        <strong>Data integrity requirement:</strong>
+        Use actual database calculations for dashboard metrics.
+        Never fabricate AI results, statistics, records, or successful
+        operations.
+      </div>
+    </section>
+
+    <section id="execution">
+      <h2>6. Execution Instructions</h2>
+
+      <p>
+        Begin building the complete application and continue through
+        implementation and verification without stopping after creating
+        a plan.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Inspect the workspace:</strong>
+          Examine existing files and project configuration before making changes.
+        </li>
+        <li>
+          <strong>Plan the architecture:</strong>
+          Define the frontend, backend, database, and AI module structure.
+        </li>
+        <li>
+          <strong>Implement the application:</strong>
+          Build the database, backend APIs, AI processing pipeline,
+          and frontend.
+        </li>
+        <li>
+          <strong>Integrate all features:</strong>
+          Ensure the pages, endpoints, database, and AI processing
+          exchange data correctly.
+        </li>
+        <li>
+          <strong>Run and test:</strong>
+          Start the frontend and backend, execute available tests,
+          verify the production build, and fix errors.
+        </li>
+        <li>
+          <strong>Test the complete workflow:</strong>
+          Verify feedback submission, AI analysis, dashboard updates,
+          recurring issue detection, corrective-action creation and
+          updates, and export of real data.
+        </li>
+        <li>
+          <strong>Verify the interface:</strong>
+          Test all primary buttons, navigation items, forms, filters,
+          and charts.
+        </li>
+      </ol>
+
+      <h3>Complete Workflow to Verify</h3>
+
+      <p>
+        Employee submits feedback → AI analyzes the submission →
+        dashboard metrics update → recurring issues are identified →
+        manager creates a corrective action → action status is updated →
+        actual database records are exported.
+      </p>
+
+      <h3>Final Deliverables</h3>
+
+      <ul>
+        <li>Complete, runnable full-stack application.</li>
+        <li>React and TypeScript frontend.</li>
+        <li>FastAPI backend with REST endpoints.</li>
+        <li>SQLite database with persistent records.</li>
+        <li>AI/NLP processing modules with transparent fallback behavior.</li>
+        <li>Automated backend tests.</li>
+        <li>README and environment configuration example.</li>
+        <li>Exact startup commands.</li>
+        <li>Demo credentials.</li>
+        <li>Implemented features and test results.</li>
+        <li>Documentation of any remaining limitations.</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>Final instruction:</strong>
+        Prioritize functionality, reliability, professional design,
+        and a smooth competition demonstration. Do not claim that any
+        feature or test works unless it has been verified. If any
+        limitation remains, document it honestly.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Voice of Store</strong></p>
+    <p>AI-Powered Retail Feedback Intelligence</p>
+    <p>Turning employee feedback into actionable retail improvements.</p>
+  </footer>
+
+</body>
+  </html>
+  
